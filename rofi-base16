@@ -1,0 +1,10 @@
+#!/bin/sh -x
+
+LAST_SCHEME=$(cat ~/.local/share/flavours/lastscheme)
+SELECTED=$(flavours list | sed 's/\s/\n/g' | grep -n "^$LAST_SCHEME\$" |cut -d: -f1)
+SELECTED=$(($SELECTED-1))
+SELECTED=$(flavours list| sed 's/\s/\n/g' | rofi -dmenu -selected-row $SELECTED)
+if [ ! -z "$SELECTED" ]
+then
+	flavours apply $SELECTED
+fi	

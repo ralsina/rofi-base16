@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Choose Color Scheme
+Comment=Choose a base16 color scheme using flavours
+Exec=rofi-base16
+Icon=color-picker
+Terminal=false
+Type=Application
